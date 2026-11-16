@@ -1,0 +1,34 @@
+---
+import { site } from '../data/site.js';
+const year = new Date().getFullYear();
+---
+<footer class="container-x mt-20 border-t-2 border-ink pb-10 pt-6">
+  <div class="grid gap-8 sm:grid-cols-3">
+    <div>
+      <p class="font-display text-2xl font-black uppercase tracking-tight">GlobalOkul</p>
+      <p class="mt-2 max-w-xs text-sm text-ink/70">
+        Yurt dışı eğitim danışmanlığı bülteni. Yeni sayı, yeni öğrenciyle çıkar.
+      </p>
+    </div>
+    <div class="text-sm">
+      <p class="kicker mb-2">İletişim</p>
+      <ul class="space-y-1 text-ink/80">
+        <li><a class="hover:text-ink" href={site.whatsappUrl} target="_blank" rel="noopener">{site.phoneDisplay} · WhatsApp</a></li>
+        <li><a class="hover:text-ink" href={`mailto:${site.email}`}>{site.email}</a></li>
+        <li><a class="hover:text-ink" href={site.instagram}>Instagram · @globalokul</a></li>
+        <li><a class="hover:text-ink" href={site.map} target="_blank" rel="noopener">Haritada gör</a></li>
+      </ul>
+      <p class="mt-2 text-xs text-ink/60 leading-relaxed">Pzt–Cum 10:00–17:00 · Cmt 09:00–19:00 · Paz Kapalı</p>
+    </div>
+    <div class="text-sm">
+      <p class="kicker mb-2">Künye</p>
+      <ul class="space-y-1 text-ink/80">
+        <li><a class="hover:text-ink" href="/kvkk">KVKK Aydınlatma Metni</a></li>
+        <li><a class="hover:text-ink" href="/kunye">Künye / Impressum</a></li>
+      </ul>
+    </div>
+  </div>
+  <p class="mt-8 border-t border-ink/30 pt-3 text-xs text-ink/50">
+    © {year} GlobalOkul · Bingöl. Bilgiler ücretsiz ön görüşmede kişiye göre netleşir; kabul/vize süreçleri resmî mercilere bağlıdır.
+  </p>
+</footer>

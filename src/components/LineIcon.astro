@@ -1,0 +1,14 @@
+---
+const { name, class: klass = '' } = Astro.props;
+const paths = {
+  chat: '<path d="M4 5h16v10H9l-4 4V5Z"/>',
+  search: '<circle cx="11" cy="11" r="6"/><path d="m20 20-4-4"/>',
+  compass: '<circle cx="12" cy="12" r="9"/><path d="m8 16 2-6 6-2-2 6-6 2Z"/>',
+  doc: '<path d="M6 3h8l4 4v14H6V3Z"/><path d="M14 3v4h4"/>',
+  passport: '<rect x="5" y="3" width="14" height="18" rx="2"/><circle cx="12" cy="10" r="3"/><path d="M9 16h6"/>',
+  cap: '<path d="m3 9 9-4 9 4-9 4-9-4Z"/><path d="M7 11v4c0 1.5 2.2 3 5 3s5-1.5 5-3v-4"/>',
+};
+const body = paths[name] ?? '';
+---
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"
+     stroke-linecap="round" stroke-linejoin="round" class={klass} aria-hidden="true" set:html={body}></svg>

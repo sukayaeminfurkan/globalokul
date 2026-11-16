@@ -1,0 +1,59 @@
+---
+import Base from '../layouts/Base.astro';
+import { site } from '../data/site.js';
+---
+<Base
+  title="Künye | GlobalOkul"
+  description="GlobalOkul iletişim ve künye bilgileri."
+>
+
+  <section class="container-x pt-8 pb-16">
+    <div class="folio">
+      <span>GlobalOkul · Künye</span>
+      <span class="hidden sm:block">GlobalOkul · Yurt Dışı Eğitim Bülteni</span>
+      <span>İletişim · Künye</span>
+    </div>
+
+    <div class="mt-8 max-w-xl">
+      <h1 class="headline">Künye</h1>
+
+      <dl class="mt-10 divide-y divide-ink/15">
+        <div class="grid grid-cols-1 gap-y-1 py-4 sm:grid-cols-[180px_1fr] sm:items-baseline sm:gap-x-6 sm:gap-y-0">
+          <dt class="field-label">Ticari Unvan</dt>
+          <dd class="text-sm text-ink/85">Global Okul (Emin Furkan Sukaya — şahıs işletmesi)</dd>
+        </div>
+        <div class="grid grid-cols-1 gap-y-1 py-4 sm:grid-cols-[180px_1fr] sm:items-baseline sm:gap-x-6 sm:gap-y-0">
+          <dt class="field-label">Faaliyet</dt>
+          <dd class="text-sm text-ink/85">Yurt dışı eğitim danışmanlığı</dd>
+        </div>
+        <div class="grid grid-cols-1 gap-y-1 py-4 sm:grid-cols-[180px_1fr] sm:items-baseline sm:gap-x-6 sm:gap-y-0">
+          <dt class="field-label">Adres</dt>
+          <dd class="text-sm text-ink/85">İnönü Mah. Genç Cad. Areboğlu-Altınhan İş Merkezi No: 50, İç Kapı No: 7, Merkez / Bingöl</dd>
+        </div>
+        <div class="grid grid-cols-1 gap-y-1 py-4 sm:grid-cols-[180px_1fr] sm:items-baseline sm:gap-x-6 sm:gap-y-0">
+          <dt class="field-label">Telefon</dt>
+          <dd class="text-sm text-ink/85"><a href={site.whatsappUrl} target="_blank" rel="noopener" class="underline">+90 543 583 4369 · WhatsApp</a></dd>
+        </div>
+        <div class="grid grid-cols-1 gap-y-1 py-4 sm:grid-cols-[180px_1fr] sm:items-baseline sm:gap-x-6 sm:gap-y-0">
+          <dt class="field-label">E-posta</dt>
+          <dd class="text-sm text-ink/85"><a href="mailto:info@globalokul.com" class="underline">info@globalokul.com</a></dd>
+        </div>
+        <div class="grid grid-cols-1 gap-y-1 py-4 sm:grid-cols-[180px_1fr] sm:items-baseline sm:gap-x-6 sm:gap-y-0">
+          <dt class="field-label">Vergi Dairesi</dt>
+          <dd class="text-sm text-ink/85">Bingöl Vergi Dairesi</dd>
+        </div>
+        <div class="grid grid-cols-1 gap-y-1 py-4 sm:grid-cols-[180px_1fr] sm:items-baseline sm:gap-x-6 sm:gap-y-0">
+          <dt class="field-label">Vergi Kimlik No</dt>
+          <dd class="text-sm text-ink/85">7821105322</dd>
+        </div>
+        <div class="grid grid-cols-1 gap-y-1 py-4 sm:grid-cols-[180px_1fr] sm:items-baseline sm:gap-x-6 sm:gap-y-0">
+          <dt class="field-label">Konum</dt>
+          <dd class="text-sm text-ink/85">
+            <a href="https://share.google/aCElzY5sCbpWwKCnB" target="_blank" rel="noopener" class="underline">Haritada gör</a>
+          </dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
+</Base>

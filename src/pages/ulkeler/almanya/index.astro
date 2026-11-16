@@ -1,0 +1,156 @@
+---
+import Base from '../../../layouts/Base.astro';
+---
+<Base
+  title="Almanya'da Üniversite — Şartlı Kabul, YKS, Vize | GlobalOkul"
+  description="Dil bilmeden şartlı kabulle Almanya'da üniversite. YKS ile başvuru, A2 ile vize, önlisanstan lisans, konaklama ve varış sonrası destek. Ücretsiz ön görüşme."
+>
+
+  <section class="container-x pt-8">
+    <div class="folio">
+      <span>Ülkeler · Almanya</span>
+      <span class="hidden sm:block">GlobalOkul · Yurt Dışı Eğitim Bülteni</span>
+      <span>Şartlı Kabul · YKS · Vize</span>
+    </div>
+
+    <div class="mt-8 grid gap-8 lg:grid-cols-[1.9fr_1fr]">
+      <article class="lg:border-r lg:border-ink lg:pr-8">
+        <p class="kicker mb-4">Ülkeler · Almanya · Şartlı kabul</p>
+        <h1 class="headline">Almanya'da üniversite</h1>
+        <p class="standfirst mt-5 max-w-xl">
+          Ana odağımız Almanya. Dil belgen olmadan şartlı kabulle başla; kayıt, vize, konaklama ve dil kursunu tek elden yürütelim, sen eğitimine hazırlan.
+        </p>
+        <div class="mt-7">
+          <a href="/#randevu" class="btn">Ücretsiz ön görüşme al</a>
+        </div>
+      </article>
+
+      <aside class="border-2 border-ink p-5">
+        <p class="section-head mb-4">Bu sayfada</p>
+        <ol class="space-y-2 text-sm">
+          {[
+            ['#sartli-kabul', 'Şartlı kabul nedir?'],
+            ['#yks',          'YKS ile başvuru'],
+            ['#onlisans',     'Önlisans ile lisans'],
+            ['#vize',         'Vize (A2 ile)'],
+            ['#konaklama',    'Konaklama'],
+            ['#varis',        'Varış sonrası destek'],
+          ].map(([href, label], i) => (
+            <li class={i > 0 ? 'border-t border-ink/15 pt-2' : ''}>
+              <a href={href} class="flex items-baseline gap-2 text-ink transition-colors hover:text-ink/60">
+                <span class="font-display text-[11px] font-bold text-ink/40 tabular-nums">0{i + 1}</span>
+                <span>{label}</span>
+              </a>
+            </li>
+          ))}
+        </ol>
+      </aside>
+    </div>
+  </section>
+
+  <section id="sartli-kabul" class="container-x reveal mt-16 scroll-mt-6">
+    <div class="folio">
+      <span class="no">01</span>
+      <span class="hidden sm:block">GlobalOkul · Almanya</span>
+      <span>Şartlı kabul nedir?</span>
+    </div>
+    <div class="mt-8 max-w-2xl">
+      <h2 class="font-display text-[clamp(1.9rem,4vw,2.9rem)] font-black leading-tight">Şartlı kabul nedir?</h2>
+      <p class="dropcap mt-4 leading-7 text-ink/85">
+        Şartlı kabul, henüz dil belgen yokken üniversiteden kabul alabilmen demek. Türkiye'de A2 sertifikasıyla vize sürecin başlar; Almanya'da dil hazırlığını (C1'e kadar) tamamlar, ardından üniversite başvurunu yaparsın. Yani dil, yurt dışında eğitim almanın önünde bir engel değil.
+      </p>
+    </div>
+  </section>
+
+  <section class="container-x reveal mt-16 scroll-mt-6">
+    <div class="grid gap-10 border-t-2 border-ink pt-8 lg:grid-cols-2">
+
+      <div id="yks" class="scroll-mt-6">
+        <p class="section-head mb-5">02 · YKS ile başvuru</p>
+        <h2 class="font-display text-[clamp(1.6rem,3.4vw,2.4rem)] font-black leading-tight">YKS ile başvuru</h2>
+        <p class="mt-3 leading-7 text-ink/85">
+          Lise sonrası Türkiye'de YKS'ye girip, gitmek istediğin bölüme paralel bir bölüme yerleşmiş olman gerekir. Yanlış tercihi en baştan önlemek için YKS tercih danışmanlığını ücretsiz veriyoruz — doğru bölümü birlikte seçiyoruz.
+        </p>
+      </div>
+
+      <div id="onlisans" class="scroll-mt-6 border-t-2 border-ink pt-8 lg:border-l-2 lg:border-t-0 lg:pl-10 lg:pt-0">
+        <p class="section-head mb-5">03 · Önlisans ile lisans</p>
+        <h2 class="font-display text-[clamp(1.6rem,3.4vw,2.4rem)] font-black leading-tight">Önlisans ile lisans</h2>
+        <p class="mt-3 leading-7 text-ink/85">
+          Önlisans mezunuysan — önlisansını bitirmiş olman şartıyla — Almanya'da lisans kabulü alarak lisans okuyabilirsin. Durumunu ön görüşmede değerlendirip uygun yolu çıkarıyoruz.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section id="vize" class="container-x reveal mt-16 scroll-mt-6">
+    <div class="folio">
+      <span class="no">04</span>
+      <span class="hidden sm:block">GlobalOkul · Almanya</span>
+      <span>Vize (A2 ile)</span>
+    </div>
+    <div class="mt-8 grid gap-8 lg:grid-cols-[1.4fr_1fr]">
+      <div>
+        <h2 class="font-display text-[clamp(1.9rem,4vw,2.9rem)] font-black leading-tight">Vize (A2 ile)</h2>
+        <p class="mt-4 leading-7 text-ink/85">
+          Şartlı kabul ve Türkiye'de alınan A2 sertifikasıyla vize sürecini yürütüyoruz. Belgeler ve randevular bizde; güncel resmî şartlara göre hazırlanırsın.
+        </p>
+      </div>
+      <aside class="self-end border-l-4 border-ink pl-5">
+        <p class="text-sm leading-relaxed text-ink/60">
+          Vize kararı ilgili konsolosluğa ve resmî mercilere bağlıdır. Biz hazırlık ve başvuru sürecinde rehberlik ederiz.
+        </p>
+      </aside>
+    </div>
+  </section>
+
+  <section class="container-x reveal mt-16 scroll-mt-6">
+    <div class="grid gap-10 border-t-2 border-ink pt-8 lg:grid-cols-2">
+
+      <div id="konaklama" class="scroll-mt-6">
+        <p class="section-head mb-5">05 · Konaklama</p>
+        <h2 class="font-display text-[clamp(1.6rem,3.4vw,2.4rem)] font-black leading-tight">Konaklama</h2>
+        <p class="mt-3 leading-7 text-ink/85">
+          Almanya'da konaklama ciddi bir sorun. Yurt ve oda bulma konusunda özel olarak destek veriyoruz; gittiğinde başını sokacak bir yerin olsun diye süreci erkenden başlatıyoruz.
+        </p>
+      </div>
+
+      <div id="varis" class="scroll-mt-6 border-t-2 border-ink pt-8 lg:border-l-2 lg:border-t-0 lg:pl-10 lg:pt-0">
+        <p class="section-head mb-5">06 · Varış sonrası destek</p>
+        <h2 class="font-display text-[clamp(1.6rem,3.4vw,2.4rem)] font-black leading-tight">Varış sonrası destek</h2>
+        <p class="mt-3 leading-7 text-ink/85">
+          "Vizeni aldık, işimiz bitti" demiyoruz. Belediyede adres kaydı, oturum (Aufenthalt) işlemleri ve C1 sonrası üniversite başvurusu dahil, varışta da yanındayız.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+  <section class="container-x reveal mt-16 scroll-mt-6">
+    <div class="border-t-2 border-ink pt-8">
+      <p class="section-head mb-6">Almanya'da başka yollar</p>
+      <div class="grid gap-5 sm:grid-cols-2 max-w-2xl">
+        <a href="/ulkeler/almanya/ausbildung" class="block border-2 border-ink p-5 transition-opacity hover:opacity-70">
+          <h3 class="font-display text-lg font-bold text-ink">Ausbildung</h3>
+          <p class="mt-2 text-sm text-ink/70">Üniversiteye gitmeden maaşlı meslek eğitimi. Başvuru, sözleşme ve vize sürecinde yanındayız.</p>
+        </a>
+        <a href="/ulkeler/almanya/sommer-work" class="block border-2 border-ink p-5 transition-opacity hover:opacity-70">
+          <h3 class="font-display text-lg font-bold text-ink">Sommer Work</h3>
+          <p class="mt-2 text-sm text-ink/70">Yaz döneminde Almanya'da çalışma imkânı. Yakında; şimdiden ön başvuru al.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section class="container-x reveal mt-16 scroll-mt-6 pb-16">
+    <div class="border-2 border-ink p-8">
+      <p class="section-head mb-5">Bir sonraki adım</p>
+      <p class="standfirst max-w-lg">
+        Durumun kişiye göre değişir. Ücretsiz ön görüşmede sana en uygun yolu birlikte çizelim.
+      </p>
+      <a href="/#randevu" class="btn mt-7 inline-flex">Ücretsiz ön görüşme al</a>
+    </div>
+  </section>
+
+</Base>

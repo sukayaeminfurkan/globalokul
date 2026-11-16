@@ -1,0 +1,293 @@
+---
+import Base from '../layouts/Base.astro';
+import { site, offerings, countries, steps, whyUs } from '../data/site.js';
+const almanya = countries.find((c) => c.featured);
+const others = countries.filter((c) => !c.featured);
+---
+<Base>
+  <section class="container-x pt-8">
+    <div class="grid gap-8 lg:grid-cols-[1.9fr_1fr]">
+      <article class="lg:border-r lg:border-ink lg:pr-8">
+        <p class="kicker mb-4">Manşet · Almanya · Şartlı kabul</p>
+        <h1 class="headline">Dil bilmeden Avrupa’da üniversiteye başlamak mümkün.</h1>
+        <div class="prose-col mt-6 columns-1 gap-8 sm:columns-2">
+          <p class="dropcap">Şartlı kabul, henüz dil belgesi olmayan öğrencinin üniversiteden kabul almasını sağlar. Türkiye’de A2 sertifikasıyla vize süreci başlar; dil hazırlığı ve C1 sonrası başvuru da dahil yolun tamamını biz yürütürüz.</p>
+          <p>Kayıt, vize, konaklama ve dil kursunu tek elden organize ederiz. Her öğrenciye aynı yol uygulanmaz: ücretsiz ön görüşmede sana en uygun ülke ve bölüm birlikte belirlenir. Varışta da yalnız bırakmayız.</p>
+        </div>
+        <div class="mt-7 flex flex-wrap items-center gap-6">
+          <a href="#randevu" class="btn">Ücretsiz ön görüşme al</a>
+          <a href="#surec" class="tlink">Nasıl çalışıyoruz?</a>
+        </div>
+      </article>
+
+      <aside class="border-2 border-ink p-5">
+        <p class="section-head mb-4">Kısa kısa</p>
+        <ul>
+          {offerings.map((o, i) => (
+            <li class={i > 0 ? 'mt-3 border-t border-ink/20 pt-3' : ''}>
+              <div class="flex items-baseline justify-between gap-3">
+                <h3 class="font-display text-base font-bold text-ink">
+                  {o.href
+                    ? <a href={o.href} class="transition-colors hover:text-ink/60">{o.title}</a>
+                    : o.title
+                  }
+                </h3>
+                <span class="font-display text-xs font-bold text-ink/50">0{i + 1}</span>
+              </div>
+              <p class="mt-1 text-sm text-ink/70">{o.blurb}</p>
+            </li>
+          ))}
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section id="ulkeler" class="container-x reveal mt-16 scroll-mt-6">
+    <div class="folio"><span class="no">02</span><span class="hidden sm:block">GlobalOkul · Ülkeler</span><span>Nereye?</span></div>
+    <div class="mt-8 grid gap-10 lg:grid-cols-[1fr_1.2fr]">
+      <div>
+        <h2 class="font-display text-[clamp(2.2rem,5vw,3.4rem)] font-black leading-none">Ülkeler</h2>
+        <p class="standfirst mt-4 max-w-sm">Ağırlık Almanya’da; yanı sıra İtalya, Romanya, Çekya, Polonya ve Avusturya. Ülkeyi ücretsiz ön görüşmede birlikte seçeriz.</p>
+        <a href="/ulkeler/almanya" class="mt-8 block border-l-4 border-ink pl-5 transition-opacity hover:opacity-70">
+          <div class="flex items-baseline justify-between">
+            <h3 class="font-display text-2xl font-extrabold">{almanya.name}</h3>
+            <span class="caveat text-2xl">{almanya.city}</span>
+          </div>
+          <p class="mt-2 text-sm text-ink/75">{almanya.blurb}</p>
+        </a>
+      </div>
+      <div class="grid gap-x-10 sm:grid-cols-2">
+        {others.map((c) => (
+          <div class="entry">
+            <div class="flex items-baseline justify-between">
+              <h3 class="font-display text-lg font-bold">{c.name}</h3>
+              <span class="caveat text-lg">{c.city}</span>
+            </div>
+            <p class="mt-1 text-sm text-ink/70">{c.blurb}</p>
+          </div>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section id="surec" class="container-x reveal mt-16 scroll-mt-6">
+    <div class="folio"><span class="no">03</span><span class="hidden sm:block">GlobalOkul · Süreç</span><span>İlk görüşmeden ilk güne</span></div>
+    <div class="mt-8 grid gap-12 lg:grid-cols-[1.4fr_1fr]">
+      <div>
+        <h2 class="font-display text-[clamp(2.2rem,5vw,3.4rem)] font-black leading-none">Nasıl çalışıyoruz</h2>
+        <ol class="mt-8 divide-y divide-ink/15">
+          {steps.map((s) => (
+            <li class="flex gap-5 py-4">
+              <span class="font-display text-2xl font-black text-ink/30 leading-none w-10 shrink-0">{String(s.n).padStart(2,'0')}</span>
+              <div>
+                <h3 class="font-display text-lg font-bold">{s.title}</h3>
+                <p class="mt-1 text-sm text-ink/70">{s.detail}</p>
+              </div>
+            </li>
+          ))}
+        </ol>
+      </div>
+      <aside id="neden-biz" class="scroll-mt-6 border-2 border-ink p-6">
+        <p class="section-head mb-5">Neden GlobalOkul</p>
+        <ul class="space-y-4">
+          {whyUs.map((w) => (
+            <li>
+              <h3 class="font-display font-bold">{w.title}</h3>
+              <p class="mt-1 text-sm text-ink/70">{w.text}</p>
+            </li>
+          ))}
+        </ul>
+      </aside>
+    </div>
+  </section>
+
+  <section id="randevu" class="container-x reveal mt-16 scroll-mt-6">
+    <div class="folio"><span class="no">04</span><span class="hidden sm:block">GlobalOkul · Randevu</span><span>Kuponu doldur</span></div>
+    <div class="mt-8 grid gap-10 lg:grid-cols-[1.7fr_1fr]">
+      <div>
+        <h2 class="font-display text-[clamp(2.2rem,5vw,3.4rem)] font-black leading-none">Randevu kuponu</h2>
+        <p class="standfirst mt-4 max-w-lg">Kuponu doldur, gönder. Talebin bize ulaşır; ücretsiz ön görüşme için sana döneriz.</p>
+
+        <div class="coupon mt-8">
+          <span class="cut">✂ &nbsp;buradan doldur</span>
+
+          <form id="coupon-form" class="space-y-6">
+            <fieldset>
+              <legend class="field-label">Hangi yol?</legend>
+              <div class="mt-2 flex flex-wrap gap-2">
+                {offerings.map((o, i) => (
+                  <label>
+                    <input class="sr-only" type="radio" name="yol" value={o.title} required checked={i===0} />
+                    <span class="choice">{o.title}</span>
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+
+            <fieldset id="ulke-fieldset">
+              <legend class="field-label">
+                Ülke
+                <span id="ulke-note" class="hidden ml-2 normal-case tracking-normal font-normal text-[11px] text-ink/50">Ausbildung ve Sommer Work yalnız Almanya için.</span>
+              </legend>
+              <div class="mt-2 flex flex-wrap gap-2">
+                {countries.map((c, i) => (
+                  <label>
+                    <input class="sr-only" type="radio" name="ulke" value={c.name} checked={i===0} />
+                    <span class="choice">{c.name}</span>
+                  </label>
+                ))}
+              </div>
+            </fieldset>
+
+            <div class="grid gap-5 sm:grid-cols-3">
+              <label class="block"><span class="field-label">Ad Soyad</span><input class="field" name="ad" required placeholder="Adın"/></label>
+              <label class="block"><span class="field-label">Telefon</span><input class="field" name="telefon" type="tel" required placeholder="05.."/></label>
+              <label class="block"><span class="field-label">E-posta</span><input class="field" name="email" type="email" required placeholder="posta@..."/></label>
+            </div>
+
+            <input type="hidden" name="_subject" value="Yeni randevu talebi — GlobalOkul">
+            <input type="text" name="_gotcha" class="sr-only" tabindex="-1" autocomplete="off">
+
+            <label class="flex items-start gap-2 text-xs text-ink/70">
+              <input type="checkbox" name="kvkk" required class="mt-0.5"/>
+              <span><a href="/kvkk" class="underline">KVKK aydınlatma metnini</a> okudum, onaylıyorum.</span>
+            </label>
+
+            <button type="submit" class="btn">Kuponu gönder</button>
+            <p id="form-error" class="hidden mt-3 text-sm text-ink/70">Bir sorun oldu, lütfen tekrar deneyin ya da <a href="mailto:info@globalokul.com" class="underline">info@globalokul.com</a>'a yazın.</p>
+          </form>
+
+          <div id="coupon-done" class="hidden text-center">
+            <p class="field-label">Teşekkürler</p>
+            <h3 class="mt-2 font-display text-2xl font-extrabold">Talebin bize ulaştı.</h3>
+            <p class="mt-2 text-sm text-ink/70">En kısa sürede ücretsiz ön görüşme için seninle iletişime geçeceğiz.</p>
+            <dl class="mx-auto mt-5 max-w-sm space-y-2 text-left text-sm">
+              <div class="flex justify-between border-b border-ink/15 pb-1"><dt class="field-label">Yol</dt><dd id="d-yol"></dd></div>
+              <div class="flex justify-between border-b border-ink/15 pb-1"><dt class="field-label">Ülke</dt><dd id="d-ulke"></dd></div>
+              <div class="flex justify-between border-b border-ink/15 pb-1"><dt class="field-label">Ad</dt><dd id="d-ad"></dd></div>
+              <div class="flex justify-between border-b border-ink/15 pb-1"><dt class="field-label">E-posta</dt><dd id="d-email"></dd></div>
+            </dl>
+            <div class="mt-6 flex items-center justify-center gap-5">
+              <button id="d-reset" class="tlink" type="button">Yeni kupon</button>
+            </div>
+            <div class="mt-6"><span id="d-stamp" class="stamp">Talep alındı</span></div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="h-max border-2 border-ink p-6">
+        <p class="section-head mb-4">İletişim</p>
+        <dl class="space-y-4 text-sm">
+          <div><dt class="field-label">Telefon</dt><dd class="mt-1"><a class="underline" href={site.whatsappUrl} target="_blank" rel="noopener">{site.phoneDisplay} · WhatsApp</a></dd></div>
+          <div><dt class="field-label">E-posta</dt><dd class="mt-1"><a class="underline" href={`mailto:${site.email}`}>{site.email}</a></dd></div>
+          <div><dt class="field-label">Instagram</dt><dd class="mt-1"><a class="underline" href={site.instagram}>@globalokul</a></dd></div>
+          <div><dt class="field-label">Konum</dt><dd class="mt-1"><a class="underline" href={site.map} target="_blank" rel="noopener">Haritada gör</a></dd></div>
+          <div>
+            <dt class="field-label">Çalışma saatleri</dt>
+            <dd class="mt-2 text-ink/75 leading-relaxed">
+              Pzt–Cum 10:00–17:00<br/>
+              Cmt 09:00–19:00<br/>
+              <span class="text-ink/50">Paz Kapalı</span>
+            </dd>
+          </div>
+        </dl>
+      </aside>
+    </div>
+  </section>
+
+  <script is:inline>
+    (function () {
+      var form = document.getElementById('coupon-form');
+      if (!form) return;
+      var done = document.getElementById('coupon-done');
+      var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      var ALMANYA_ONLY = ['Ausbildung', 'Sommer Work in Germany'];
+
+      function syncUlkeState() {
+        var yolInputs = form.querySelectorAll('input[name="yol"]');
+        var selectedYol = '';
+        for (var i = 0; i < yolInputs.length; i++) {
+          if (yolInputs[i].checked) { selectedYol = yolInputs[i].value; break; }
+        }
+        var restricted = ALMANYA_ONLY.indexOf(selectedYol) !== -1;
+        var ulkeInputs = form.querySelectorAll('input[name="ulke"]');
+        var note = document.getElementById('ulke-note');
+
+        for (var j = 0; j < ulkeInputs.length; j++) {
+          var inp = ulkeInputs[j];
+          var isAlmanya = inp.value === 'Almanya';
+          if (restricted) {
+            if (isAlmanya) {
+              inp.disabled = false;
+              inp.checked = true;
+            } else {
+              inp.checked = false;
+              inp.disabled = true;
+            }
+          } else {
+            inp.disabled = false;
+          }
+        }
+        if (note) {
+          if (restricted) { note.classList.remove('hidden'); }
+          else             { note.classList.add('hidden'); }
+        }
+      }
+
+      var yolInputs = form.querySelectorAll('input[name="yol"]');
+      for (var k = 0; k < yolInputs.length; k++) {
+        yolInputs[k].addEventListener('change', syncUlkeState);
+      }
+      syncUlkeState(); // başlangıç durumu
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (!form.reportValidity()) return;
+
+        var submitBtn = form.querySelector('button[type="submit"]');
+        var errEl = document.getElementById('form-error');
+        submitBtn.disabled = true;
+        if (errEl) errEl.classList.add('hidden');
+
+        var f = new FormData(form);
+        var yol   = f.get('yol')   || '';
+        var ulke  = f.get('ulke')  || '';
+        var ad    = f.get('ad')    || '';
+        var email = f.get('email') || '';
+
+        fetch('https://formspree.io/f/mgakapje', {
+          method: 'POST',
+          headers: { 'Accept': 'application/json' },
+          body: f
+        })
+        .then(function (res) {
+          if (res.ok) {
+            document.getElementById('d-yol').textContent   = yol;
+            document.getElementById('d-ulke').textContent  = ulke;
+            document.getElementById('d-ad').textContent    = ad;
+            document.getElementById('d-email').textContent = email;
+            form.classList.add('hidden');
+            done.classList.remove('hidden');
+            var stamp = document.getElementById('d-stamp');
+            if (!reduce) { stamp.classList.remove('stamp-in'); void stamp.offsetWidth; stamp.classList.add('stamp-in'); }
+          } else {
+            if (errEl) errEl.classList.remove('hidden');
+            submitBtn.disabled = false;
+          }
+        })
+        .catch(function () {
+          if (errEl) errEl.classList.remove('hidden');
+          submitBtn.disabled = false;
+        });
+      });
+
+      document.getElementById('d-reset').addEventListener('click', function () {
+        done.classList.add('hidden');
+        form.classList.remove('hidden');
+        form.reset();
+        syncUlkeState(); // reset sonrası disabled durumu temizle
+      });
+    })();
+  </script>
+</Base>

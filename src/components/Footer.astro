@@ -1,0 +1,57 @@
+---
+import { site, nav } from '../data/site.js';
+const year = new Date().getFullYear();
+---
+<footer class="mt-24">
+  <div class="bg-gold">
+    <div class="container-x flex flex-col items-start justify-between gap-4 py-6 sm:flex-row sm:items-center">
+      <p class="font-display text-lg font-extrabold uppercase tracking-wide text-ink">
+        {site.tagline}
+      </p>
+      <a href="/iletisim" class="inline-flex items-center justify-center gap-2 rounded-pill bg-ink px-6 py-3 font-display font-bold text-surface transition-transform hover:-translate-y-0.5">
+        Ücretsiz Ön Görüşme
+      </a>
+    </div>
+  </div>
+
+  <div class="bg-ink text-surface">
+    <div class="container-x grid gap-8 py-12 sm:grid-cols-2 lg:grid-cols-4">
+      <div>
+        <p class="font-display text-xl font-extrabold">
+          <span>GLOBAL</span><span class="text-surface">OKUL</span>
+        </p>
+        <p class="mt-3 max-w-xs text-sm text-surface/70">{site.description}</p>
+      </div>
+
+      <div>
+        <h3 class="font-display text-sm font-bold uppercase tracking-wide text-surface/60">Menü</h3>
+        <ul class="mt-3 space-y-2 text-sm">
+          {nav.map((item) => (
+            <li><a href={item.href} class="text-surface/80 hover:text-surface">{item.label}</a></li>
+          ))}
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-display text-sm font-bold uppercase tracking-wide text-surface/60">İletişim</h3>
+        <ul class="mt-3 space-y-2 text-sm text-surface/80">
+          <li><a href={`mailto:${site.email}`} class="hover:text-surface">{site.email}</a></li>
+          <li><a href={site.instagram} class="hover:text-surface">Instagram</a></li>
+        </ul>
+      </div>
+
+      <div>
+        <h3 class="font-display text-sm font-bold uppercase tracking-wide text-surface/60">Yasal</h3>
+        <ul class="mt-3 space-y-2 text-sm text-surface/80">
+          <li><a href="/kvkk" class="hover:text-surface">KVKK Aydınlatma Metni</a></li>
+          <li><a href="/kunye" class="hover:text-surface">Künye</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="border-t border-surface/10">
+      <div class="container-x py-4 text-xs text-surface/60">
+        © {year} {site.name}. Tüm hakları saklıdır.
+      </div>
+    </div>
+  </div>
+</footer>

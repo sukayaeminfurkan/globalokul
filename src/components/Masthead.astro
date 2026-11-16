@@ -1,0 +1,25 @@
+---
+const nav = [
+  { label: 'Ülkeler', href: '/#ulkeler' },
+  { label: 'Süreç',   href: '/#surec' },
+  { label: 'Neden biz', href: '/#neden-biz' },
+  { label: 'Randevu', href: '/#randevu' },
+];
+---
+<header class="container-x pt-5">
+  <div class="flex items-center justify-between border-b border-ink pb-2 text-[11px] font-semibold uppercase tracking-[0.14em] text-ink/70">
+    <span>Bingöl · Türkiye</span>
+    <span class="hidden sm:block">Yurt Dışı Eğitim Bülteni</span>
+    <span>Sayı 01</span>
+  </div>
+
+  <div class="py-5 text-center sm:py-7">
+    <a href="/" class="font-display text-[clamp(2.6rem,10vw,6.5rem)] font-black uppercase leading-none tracking-[-0.03em] text-ink">GlobalOkul</a>
+    <p class="caveat mt-1 text-2xl">Doğru bilgi, doğru adım, güvenli gelecek</p>
+  </div>
+
+  <nav class="flex flex-wrap items-center justify-center gap-x-7 gap-y-2 border-y-2 border-ink py-3 font-display text-xs font-bold uppercase tracking-[0.16em]" aria-label="Ana menü">
+    {nav.map((item) => (<a href={item.href} class="text-ink transition-colors hover:text-ink/60">{item.label}</a>))}
+    <a href="/#randevu" class="btn !px-4 !py-1.5 !text-[11px]">Ücretsiz ön görüşme</a>
+  </nav>
+</header>

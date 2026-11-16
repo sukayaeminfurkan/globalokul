@@ -1,0 +1,9 @@
+node_modules/
+dist/
+.astro/
+.DS_Store
+CLAUDE.md
+.claude/
+brief/
+TASARIM-BRIEF*.md
+*ADIMLAR*.md
