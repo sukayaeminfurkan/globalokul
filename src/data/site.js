@@ -10,7 +10,6 @@ export const site = {
   whatsappUrl: "https://wa.me/905435834369?text=Merhaba%2C%20GlobalOkul%20hakk%C4%B1nda%20bilgi%20almak%20istiyorum.",
   instagram: "https://www.instagram.com/globalokul/",
   map: "https://share.google/aCElzY5sCbpWwKCnB",
-  calendly: "https://calendly.com/aysefmy/ucretsiz-on-gorusme",
 };
 
 export const nav = [
