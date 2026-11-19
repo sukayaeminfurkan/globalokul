@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import Masthead from '../components/Masthead.astro';
 import Colophon from '../components/Colophon.astro';
+import CookieBanner from '../components/CookieBanner.astro';
 import { site } from '../data/site.js';
 
 const { title, description = site.description } = Astro.props;
@@ -71,13 +72,21 @@ const jsonLd = {
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImage} />
     <script type="application/ld+json" set:html={JSON.stringify(jsonLd)}></script>
-    <!-- Google Analytics (GA4) -->
-    <script is:inline async src="https://www.googletagmanager.com/gtag/js?id=G-QH1LGN2HND"></script>
     <script is:inline>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-QH1LGN2HND');
+      window.loadGA = function () {
+        if (window._gaLoaded) return;
+        window._gaLoaded = true;
+        var s = document.createElement('script');
+        s.async = true;
+        s.src = 'https://www.googletagmanager.com/gtag/js?id=G-QH1LGN2HND';
+        document.head.appendChild(s);
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        window.gtag = gtag;
+        gtag('js', new Date());
+        gtag('config', 'G-QH1LGN2HND');
+      };
+      if (localStorage.getItem('ga-consent') === 'granted') window.loadGA();
     </script>
   </head>
   <body>
@@ -88,6 +97,7 @@ const jsonLd = {
       <slot />
     </main>
     <Colophon />
+    <CookieBanner />
     <script is:inline>
       (function () {
         var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;

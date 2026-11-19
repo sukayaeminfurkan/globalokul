@@ -1,0 +1,34 @@
+---
+---
+<div id="cerez-banner" role="region" aria-label="Çerez bildirimi" class="fixed bottom-0 left-0 right-0 z-50 bg-surface border-t border-hairline hidden">
+  <div class="max-w-content mx-auto px-5 py-3 flex flex-col sm:flex-row sm:items-center gap-3">
+    <p class="text-ink text-sm leading-snug flex-1">
+      Bu site, ziyaretçi istatistikleri için çerez kullanır. Kabul ederek anonim kullanım verilerinin toplanmasına izin verirsin.
+      <a href="/kvkk" class="underline underline-offset-2 hover:text-ink-muted motion-reduce:transition-none transition-colors">Gizlilik ve çerezler</a>
+    </p>
+    <div class="flex items-center gap-3 shrink-0">
+      <button id="cerez-kabul" type="button" class="bg-gold text-ink text-sm font-semibold px-5 py-1.5 rounded-pill hover:bg-gold-deep transition-colors motion-reduce:transition-none">Kabul et</button>
+      <button id="cerez-reddet" type="button" class="text-sm text-ink-muted underline underline-offset-2 hover:text-ink transition-colors motion-reduce:transition-none">Reddet</button>
+    </div>
+  </div>
+</div>
+
+<script is:inline>
+  (function () {
+    var banner = document.getElementById('cerez-banner');
+    var consent = localStorage.getItem('ga-consent');
+    if (consent === 'granted' || consent === 'denied') return;
+    banner.classList.remove('hidden');
+
+    document.getElementById('cerez-kabul').addEventListener('click', function () {
+      localStorage.setItem('ga-consent', 'granted');
+      if (typeof window.loadGA === 'function') window.loadGA();
+      banner.classList.add('hidden');
+    });
+
+    document.getElementById('cerez-reddet').addEventListener('click', function () {
+      localStorage.setItem('ga-consent', 'denied');
+      banner.classList.add('hidden');
+    });
+  })();
+</script>
